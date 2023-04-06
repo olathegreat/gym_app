@@ -1,7 +1,12 @@
 import { SelectedPage } from '@/shared/types';
+import { motion } from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 
+const childvariant ={
+    hidden: {opacity: 0, scale:0.9 },
+    visible: {opacity: 1}
+}
 
 type Props = {
     icon: JSX.Element;
@@ -10,9 +15,12 @@ type Props = {
     setSelectedPage: (value: SelectedPage)=> void;
 }
 
+
 const Benefit = ({icon, title, setSelectedPage, description}: Props) => {
   return (
-    <div className='mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center'>
+    <motion.div 
+    variants={childvariant}
+    className='mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center'>
 
         <div className='mb-4 flex justify-center'>
 
@@ -31,7 +39,7 @@ const Benefit = ({icon, title, setSelectedPage, description}: Props) => {
         
                  {description}
         </p>
-        
+
         <AnchorLink
             className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
             onClick={() => setSelectedPage(SelectedPage.ContactUs)}
@@ -42,7 +50,7 @@ const Benefit = ({icon, title, setSelectedPage, description}: Props) => {
            
         
 
-    </div>
+    </motion.div>
   )
 }
 
