@@ -40,6 +40,8 @@ const Footer = ({setSelectedPage}: Props) => {
             
                 <p>(555) 435-216</p>
 
+                <p className='font-bold'>Developed by <a href="http://olarotimi-dev.vercel.app" className='text-primary-500'>Olarotimi</a></p>
+
             </div>
 
         </div>
